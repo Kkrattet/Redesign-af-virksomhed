@@ -1,0 +1,277 @@
+/* ================================================
+   MINAS KAFFEBAR — forside.css
+   ------------------------------------------------
+   Indhold:
+   1. Sektion 1 (billeder + tekst)
+   2. Sektion 2 (video + papir)
+   3. Responsivt (desktop)
+   ================================================ */
+
+/* ------------------------------------------------
+   1. SEKTION 1
+   ------------------------------------------------ */
+
+.forside-sektion1 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Venstre — billeder lag på lag */
+.forside-sektion1__venstre {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 70px;
+  overflow: hidden;
+  order: 1;
+}
+
+.baggrund-billede {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.ovenpaa-billede {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(5deg);
+  width: 60%;
+  height: auto;
+}
+
+.knap-vibes {
+  position: absolute;
+  bottom: 2rem;
+  top: 62%;
+  left: 48%;
+  transform: translateX(-50%);
+  width: 45%;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.knap-vibes:hover {
+  opacity: 0.85;
+}
+
+/* Højre — linjeret papir */
+
+.forside-sektion1__hoejre {
+  order: 2;
+  background-image: url("../img/forsiden/baggrund_linjer.webp");
+  background-repeat: repeat;
+  background-size: 400px auto;
+  border: 30px solid var(--gul);
+}
+
+.forside-sektion1__hoejre p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 1.7rem;
+}
+
+/* ------------------------------------------------
+   2. SEKTION 2
+   ------------------------------------------------ */
+
+.forside-sektion2 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.forside-sektion2__video {
+  overflow: hidden;
+}
+
+.forside-sektion2__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.forside-sektion2__papir {
+  overflow: hidden;
+  max-height: 150px;
+}
+
+.forside-sektion2__papir img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobil — vis kun liggende papir */
+.video_papir {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.video_papir_hoejkant {
+  display: none;
+}
+
+/* ------------------------------------------------
+   3. SEKTION 3
+   ------------------------------------------------ */
+
+.forside-sektion3 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Højre — rød baggrund med billeder */
+.forside-sektion3__billeder {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  order: 1;
+}
+
+.laekkerier-baggrund {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.laekkerier-billede {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  width: 60%;
+  height: auto;
+}
+
+.laekkerier-knap {
+  position: absolute;
+  bottom: 2rem;
+  left: 55%;
+  top: 80%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: auto;
+  transition: opacity 0.2s;
+}
+
+.laekkerier-knap:hover {
+  opacity: 0.85;
+}
+
+/* Venstre — gul tekst */
+.forside-sektion3__tekst {
+  order: 2;
+  background-image: url("../img/forsiden/baggrund_linjer.webp");
+  background-repeat: repeat;
+  background-size: 400px auto;
+  border: 40px solid var(--gul);
+}
+
+.forside-sektion3__tekst p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 1.9rem;
+}
+
+.forside-sektion3__tekst a {
+  color: var(--brun);
+  text-decoration: underline;
+}
+
+.kaerligst-logo {
+  width: 60%;
+  height: auto;
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
+/* ------------------------------------------------
+   3. RESPONSIVT — desktop
+   ------------------------------------------------ */
+
+@media (min-width: 768px) {
+  /* Sektion 1 */
+
+  .forside-sektion1 {
+    grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+
+  .forside-sektion1__venstre {
+    aspect-ratio: auto;
+    height: 100%;
+    order: 1;
+  }
+
+  .forside-sektion1__hoejre {
+    order: 2;
+    padding: 2rem;
+    border: 30px solid var(--gul);
+  }
+
+  .forside-sektion1__hoejre p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  /* Sektion 2 */
+  .forside-sektion2 {
+    grid-template-columns: 5fr 1fr;
+    min-height: 350px;
+  }
+
+  .forside-sektion2__video {
+    min-height: 350px;
+    order: 1;
+    overflow: hidden;
+  }
+
+  .forside-sektion2__papir {
+    order: 2;
+    overflow: hidden;
+  }
+
+  /* Desktop — vis billede højkant */
+  .video_papir {
+    display: none;
+  }
+
+  .video_papir_hoejkant {
+    order: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 700px;
+  }
+
+  /* Sektion 3 */
+  .forside-sektion3 {
+    grid-template-columns: 1fr 1fr;
+    min-height: 300px;
+  }
+
+  .forside-sektion3__tekst {
+    order: 1;
+    padding: 3rem;
+  }
+
+  .forside-sektion3__billeder {
+    order: 2;
+  }
+
+  .forside-sektion3__tekst p {
+    font-size: 18px;
+    padding-top: 1rem;
+  }
+}

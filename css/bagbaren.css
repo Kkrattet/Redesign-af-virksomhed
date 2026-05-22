@@ -1,0 +1,24 @@
+.bagbaren_mobile,
+.bagbaren_desktop {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bagbaren_section {
+  width: 100%;
+}
+
+.bagbaren_desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .bagbaren_mobile {
+    display: none;
+  }
+
+  .bagbaren_desktop {
+    display: block;
+  }
+}

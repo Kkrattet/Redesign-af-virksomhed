@@ -1,0 +1,24 @@
+.vibes_section {
+  width: 100%;
+}
+
+.vibes_mobile,
+.vibes_desktop {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vibes_desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .vibes_mobile {
+    display: none;
+  }
+
+  .vibes_desktop {
+    display: block;
+  }
+}

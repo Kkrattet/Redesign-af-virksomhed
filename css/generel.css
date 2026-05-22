@@ -1,0 +1,357 @@
+/* ================================================
+   MINAS KAFFEBAR — generel.css
+   ------------------------------------------------
+   Indhold:
+   1. Variabler & grundindstillinger
+   2. Typografi
+   3. Header
+   4. Navigation
+   5. Main & sektioner
+   6. Footer
+   7. Responsivt (mobil → tablet → desktop)
+   ================================================ */
+
+/* ------------------------------------------------
+   1. VARIABLER & GRUNDINDSTILLINGER
+   Alle farver og fonte samlet ét sted —
+   ændr her, og det opdateres overalt
+   ------------------------------------------------ */
+
+:root {
+  --gul: #fef109;
+  --roed: #e8272a;
+  --sort: #111111;
+  --creme: #fffcde;
+  --hvid: #ffffff;
+  --brun: #754002;
+
+  --skrift-haandskrift: "Nothing You Could Do", cursive;
+  --skrift-tekst: "Science Gothic", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--skrift-tekst);
+  background-color: var(--creme);
+  color: var(--sort);
+}
+
+/* ------------------------------------------------
+   2. TYPOGRAFI
+   ------------------------------------------------ */
+
+h1,
+h2,
+h3 {
+  font-family: var(--skrift-haandskrift);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-family: var(--skrift-tekst);
+  color: var(--brun);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--skrift-tekst);
+  color: var(--brun);
+}
+
+/* ------------------------------------------------
+   3. HEADER
+   Baggrundsbillede af cafeen med logo-cirkel,
+   gul håndskrift-titel og nav-pills forneden
+   ------------------------------------------------ */
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+
+  background-color: #2a2a2a;
+  background-image: url("../img/header/footer/topimg.webp");
+  background-size: cover;
+  background-position: top;
+}
+
+/* Logo-cirkel */
+.header__logo {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1.5rem;
+}
+
+.header__logo img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  display: block;
+}
+.header__logo {
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.header__logo:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* "Vi elsker dig!" — gul håndskrift øverst til venstre */
+.header__titel {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.5rem;
+  z-index: 2;
+  font-family: var(--skrift-haandskrift);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 400;
+  color: var(--gul);
+  margin: 0;
+}
+
+/* ------------------------------------------------
+   4. NAVIGATION
+   Gul menu i headeren
+   ------------------------------------------------ */
+.header__nav {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.nav__pill {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--gul);
+  border-radius: 100px;
+  color: var(--roed);
+  font-family: var(--skrift-tekst);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.nav__pill:hover,
+.nav__pill--aktiv {
+  background-color: var(--creme);
+  color: var(--roed);
+}
+
+/* ------------------------------------------------
+   5. MAIN & SEKTIONER
+   ------------------------------------------------ */
+
+main {
+  min-height: 50vh;
+}
+
+.sektion {
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sektion--lys {
+  background-color: var(--creme);
+}
+
+.sektion--gul {
+  background-color: var(--gul);
+}
+
+.mail-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--roed);
+  font-weight: 700;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.mail-link:hover {
+  opacity: 0.75;
+}
+
+/* ------------------------------------------------
+   6. FOOTER
+   Baggrundsbillede af gæster udenfor,
+   tekst i hvid til venstre og højre
+   ------------------------------------------------ */
+
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  color: var(--creme);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  background-color: #1a1a1a;
+  background-image: url("../img/header/footer/topimg.webp");
+  background-size: cover;
+  background-position: bottom;
+  font-family: var(--skrift-tekst);
+  color: var(--creme);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.footer__kolonne {
+  position: relative;
+  z-index: 1;
+  font-family: var(--skrift-tekst);
+  color: var(--creme);
+}
+
+.footer h3 {
+  font-family: var(--skrift-tekst);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-bottom: 0.2rem;
+  opacity: 0.95;
+
+  font-family: var(--skrift-tekst);
+  color: var(--creme);
+}
+
+.footer__kolonne--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--skrift-tekst);
+  color: var(--creme);
+}
+
+.footer__instagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--creme);
+  transition: opacity 0.2s;
+}
+
+.footer__instagram span {
+  font-family: var(--skrift-haandskrift);
+  font-size: 1.4rem;
+}
+
+.footer__instagram:hover {
+  opacity: 0.7;
+}
+
+.footer__cvr {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  text-align: center;
+  font-family: var(--skrift-tekst);
+  color: var(--creme);
+}
+
+/* ------------------------------------------------
+   7. RESPONSIVT
+   Mobil er standard — vi tilpasser opad
+   ------------------------------------------------ */
+
+@media (min-width: 600px) {
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2.5rem 3rem;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .header {
+    min-height: 70vh;
+  }
+
+  .header__logo {
+    width: auto;
+  }
+
+  .header__logo img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .header__titel {
+    font-size: 7rem;
+  }
+
+  .header__nav {
+    gap: 3rem;
+  }
+
+  .nav__pill {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+  }
+
+  .sektion {
+    padding: 4rem 2rem;
+  }
+
+  .footer {
+    padding: 3rem 4rem;
+    min-height: 220px;
+  }
+  .footer p {
+    font-family: var(--skrift-tekst);
+    color: var(--creme);
+  }
+}
+
+/* GENEREL STYLING AF SIDEN VIBES */
