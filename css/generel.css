@@ -221,7 +221,9 @@ main {
   color: var(--creme);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  align-items: end;
   gap: 1.5rem;
   padding: 2rem 1.5rem;
   background-color: #1a1a1a;
@@ -246,6 +248,16 @@ main {
   color: var(--creme);
 }
 
+.footer__kolonne:first-child {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.footer__kolonne--location {
+  grid-column: 1;
+  grid-row: 2;
+}
+
 .footer h3 {
   font-family: var(--skrift-tekst);
   font-size: 0.82rem;
@@ -260,7 +272,6 @@ main {
   line-height: 1.7;
   margin-bottom: 0.2rem;
   opacity: 0.95;
-
   font-family: var(--skrift-tekst);
   color: var(--creme);
 }
@@ -268,10 +279,12 @@ main {
 .footer__kolonne--center {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.4rem;
   font-family: var(--skrift-tekst);
   color: var(--creme);
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .footer__instagram {
@@ -302,16 +315,7 @@ main {
 
 /* ------------------------------------------------
    7. RESPONSIVT
-   Mobil er standard — vi tilpasser opad
    ------------------------------------------------ */
-
-@media (min-width: 600px) {
-  .footer {
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 2.5rem 3rem;
-    align-items: center;
-  }
-}
 
 @media (min-width: 900px) {
   .header {
@@ -352,6 +356,27 @@ main {
     font-family: var(--skrift-tekst);
     color: var(--creme);
   }
-}
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 2.5rem 3rem;
+    align-items: center;
+  }
 
-/* GENEREL STYLING AF SIDEN VIBES */
+  .footer__kolonne:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footer__kolonne--center {
+    grid-column: 2;
+    grid-row: 1;
+    align-items: center;
+  }
+
+  .footer__kolonne--location {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+  }
+}
