@@ -1,11 +1,11 @@
-/* ================================================
+/* 
    MINAS KAFFEBAR — forside.css
    ------------------------------------------------
    Indhold:
    1. Sektion 1 (billeder + tekst)
    2. Sektion 2 (video + papir)
-   3. Responsivt (desktop)
-   ================================================ */
+   3. Sektion 3 (lækkerier + tekst)
+   4. Responsivt (desktop)
 
 /* ------------------------------------------------
    1. SEKTION 1
@@ -107,7 +107,6 @@
   display: block;
 }
 
-/* Mobil — vis kun liggende papir */
 .video_papir {
   width: 100%;
   height: 150px;

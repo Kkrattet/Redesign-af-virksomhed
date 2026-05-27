@@ -1,20 +1,19 @@
-/* ================================================
+/* ------------------------------------------------
    MINAS KAFFEBAR — generel.css
    ------------------------------------------------
    Indhold:
-   1. Variabler & grundindstillinger
+   1. Variabler & Grundindstillinger
    2. Typografi
    3. Header
    4. Navigation
    5. Main & sektioner
    6. Footer
-   7. Responsivt (mobil → tablet → desktop)
-   ================================================ */
+   7. Responsivt (mobil → desktop)
+    ------------------------------------------------*/
 
 /* ------------------------------------------------
    1. VARIABLER & GRUNDINDSTILLINGER
-   Alle farver og fonte samlet ét sted —
-   ændr her, og det opdateres overalt
+   Farver og fonte
    ------------------------------------------------ */
 
 :root {
